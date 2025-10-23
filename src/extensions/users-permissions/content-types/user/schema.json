@@ -87,6 +87,14 @@
       "relation": "oneToMany",
       "target": "api::commande.commande",
       "mappedBy": "user"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
