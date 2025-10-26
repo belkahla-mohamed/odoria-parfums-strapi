@@ -27,6 +27,12 @@
       "relation": "manyToMany",
       "target": "api::product.product",
       "mappedBy": "sizes"
+    },
+    "cart_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "size"
     }
   }
 }

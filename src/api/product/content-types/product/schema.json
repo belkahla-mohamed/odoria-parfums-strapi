@@ -62,17 +62,17 @@
       "target": "api::category.category",
       "inversedBy": "products"
     },
-    "carts": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::cart.cart",
-      "mappedBy": "products"
-    },
     "commandes": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::commande.commande",
       "mappedBy": "products"
+    },
+    "cart_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "product"
     }
   }
 }

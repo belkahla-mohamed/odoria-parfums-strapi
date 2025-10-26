@@ -11,22 +11,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "quantity": {
-      "type": "integer",
-      "required": true,
-      "default": 1
-    },
     "user": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "mappedBy": "cart"
     },
-    "products": {
+    "cart_items": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::product.product",
-      "inversedBy": "carts"
+      "relation": "oneToMany",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "cart"
     }
   }
 }
