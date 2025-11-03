@@ -478,19 +478,28 @@ export interface ApiCommandeCommande extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    adress: Schema.Attribute.String & Schema.Attribute.Required;
+    city: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     dateCmd: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    fullName: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::commande.commande'
     > &
       Schema.Attribute.Private;
+    phone: Schema.Attribute.Integer & Schema.Attribute.Required;
+    postalCode: Schema.Attribute.String;
     products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer & Schema.Attribute.Required;
+    statusCmd: Schema.Attribute.Enumeration<
+      ['pending', 'processing', 'completed']
+    > &
+      Schema.Attribute.DefaultTo<'pending'>;
     total: Schema.Attribute.Decimal & Schema.Attribute.Required;
     unitPrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;

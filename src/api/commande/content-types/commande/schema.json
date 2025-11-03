@@ -38,6 +38,34 @@
       "relation": "manyToMany",
       "target": "api::product.product",
       "inversedBy": "commandes"
+    },
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "adress": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "integer",
+      "required": true
+    },
+    "statusCmd": {
+      "type": "enumeration",
+      "default": "pending",
+      "enum": [
+        "pending",
+        "processing",
+        "completed"
+      ]
     }
   }
 }
